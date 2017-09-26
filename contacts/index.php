@@ -2,56 +2,28 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
 ?>
-<p>Обратитесь к нашим специалистам и получите профессиональную консультацию по вопросам создания и покупки мебели (от дизайна, разработки технического задания до доставки мебели к Вам домой).</p>
 
-<p>Вы можете обратиться к нам по телефону, по электронной почте или договориться о встрече в нашем офисе. Будем рады помочь вам и ответить на все ваши вопросы. </p>
-
-<h2>Телефоны</h2>
-
-<ul> 
-	<li>Телефон/факс:
-		<ul> 
-			<li><b>(495) 212-85-06</b></li>
-		</ul>
-	</li>
- 
-	<li>Телефоны:
-		<ul> 
-			<li><b>(495) 212-85-07</b></li>
-			<li><b>(495) 212-85-08</b></li>
-		</ul>
-	</li>
-</ul>
-
-<h2>Email</h2>
-
-<ul> 
-  <li><a href="mailto:info@example.ru">info@example.ru</a> &mdash; общие вопросы</li>
-  <li><a href="mailto:sales@example.ru">sales@example.ru</a> &mdash; приобретение продукции</li>
-  <li><a href="mailto:marketing@example.ru">marketing@example.ru</a> &mdash; маркетинг/мероприятия/PR</li>
-</ul>
-
-<h2>Офис в Москве</h2>
-<p><?$APPLICATION->IncludeComponent("bitrix:map.google.view", ".default", array(
-	"KEY" => "ABQIAAAAOSNukcWVjXaGbDo6npRDcxS1yLxjXbTnpHav15fICwCqFS-qhhSby0EyD6rK_qL4vuBSKpeCz5cOjw",
-	"INIT_MAP_TYPE" => "NORMAL",
-	"MAP_DATA" => "a:3:{s:10:\"google_lat\";s:7:\"55.7383\";s:10:\"google_lon\";s:7:\"37.5946\";s:12:\"google_scale\";i:13;}",
-	"MAP_WIDTH" => "600",
-	"MAP_HEIGHT" => "500",
-	"CONTROLS" => array(
-		0 => "LARGE_MAP_CONTROL",
-		1 => "MINIMAP",
-		2 => "HTYPECONTROL",
-		3 => "SCALELINE",
-	),
-	"OPTIONS" => array(
-		0 => "ENABLE_SCROLL_ZOOM",
-		1 => "ENABLE_DBLCLICK_ZOOM",
-		2 => "ENABLE_DRAGGING",
-	),
-	"MAP_ID" => ""
-	),
-	false
-);?></p>
+    <b>Адрес:</b> Москва, 2-я Хуторская ул., 38А</p>
+    <iframe width="640" height="490" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+            src="https://maps.google.ru/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;q=%D0%B3.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB.+2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+38%D0%90&amp;aq=&amp;sll=55,103&amp;sspn=90.84699,270.527344&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+38,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+127287&amp;ll=55.805478,37.569551&amp;spn=0.023154,0.054932&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe>
+    <br/>
+    <small><a
+            href="https://maps.google.ru/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=%D0%B3.+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB.+2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F,+%D0%B4.+38%D0%90&amp;aq=&amp;sll=55,103&amp;sspn=90.84699,270.527344&amp;t=m&amp;ie=UTF8&amp;hq=&amp;hnear=2-%D1%8F+%D0%A5%D1%83%D1%82%D0%BE%D1%80%D1%81%D0%BA%D0%B0%D1%8F+%D1%83%D0%BB.,+38,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+127287&amp;ll=55.805478,37.569551&amp;spn=0.023154,0.054932&amp;z=14&amp;iwloc=A"
+            style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>
+    <?$APPLICATION->IncludeComponent("bitrix:main.feedback", "feedback", Array(
+    	"COMPONENT_TEMPLATE" => ".default",
+    		"OK_TEXT" => "Спасибо, ваше сообщение принято.",	// Сообщение, выводимое пользователю после отправки
+    		"EMAIL_TO" => "vauvalera@yandex.ru",	// E-mail, на который будет отправлено письмо
+    		"REQUIRED_FIELDS" => array(	// Обязательные поля для заполнения
+    			0 => "NAME",
+    			1 => "EMAIL",
+    			2 => "MESSAGE",
+    		),
+    		"EVENT_MESSAGE_ID" => array(	// Почтовые шаблоны для отправки письма
+    			0 => "7",
+    		)
+    	),
+    	false
+    );?>
 
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
